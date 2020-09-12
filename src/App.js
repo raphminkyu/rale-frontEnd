@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
 
-function App() {
+
+
+const App= ()=> {
+  const [wolframInput, setWolframInput] = useState("")
+  const API = "KH3LRW-HUELER2TUL"
+  const queryType="simple"
+  const url = `http://api.wolframalpha.com/v2/${queryType}?appid=${API}&input=${wolframInput}&output=json`
+  const getClick =()=>{
+    fetch("http://localhost:5000/uploads/url")
+    .then(res=>res.json())
+    .then(res=>setWolframInput(res))
+    .catch(e=>console.log(e))
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick ={getClick} >heyhey</button>
+      {/* <img src = {"http://api.wolframalpha.com/v2/simple?appid=KH3LRW-HUELER2TUL&input=5x5&output=json"}/> */}
+      <img src = {url}/>
     </div>
   );
 }
