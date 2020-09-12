@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+h3 {
+  font-weight: 400;
+}
+.container {
+  width: 400px;
+  height: 100vh;
+  margin: 0 auto;
+}
+.topics {
+  /* height: 30vh; */
+  margin: 15px;
+
+  width: 400px;
+  height: 200px;
+}
+.wordChart {
+  /* margin-bottom: 10px;
+  border: 1px solid grey; */
+
+  width: 100%;
+  height: 100%;
+  position: relative;
+  /*top: -50px; */
+}
+.questions {
+  display: block;
+  position: relative;
+  height: 120px;
+  border: 1px solid black;
+  padding: 5px 20px;
+  border-radius: 10px;
+  overflow-y: auto;
+  text-align: center;
+}
+/* .questions::-webkit-scrollbar {
+  display: none;
+} */
+
+.wolfram {
+}
+.slick-arrow {
+  background: #778899 !important;
+}
+
+.image {
+  border: 1px solid grey;
+  outline: none;
+}
+
+.first-p {
+  font-size: 17px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.slider {
+  border: 1px solid grey;
+}
+
+.questions::-webkit-scrollbar {
+  width: 1em;
+}
+
+.questions::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.questions::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 10px;
+  outline: none;
+}

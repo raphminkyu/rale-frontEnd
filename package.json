@@ -1,0 +1,44 @@
+{
+  "name": "pennappsxxifrontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@weknow/react-bubble-chart-d3": "^1.0.12",
+    "node-sass": "^4.14.1",
+    "react": "^16.13.1",
+    "react-bubble-chart": "^0.4.0",
+    "react-dom": "^16.13.1",
+    "react-image-lightbox": "^5.1.1",
+    "react-new-window": "^0.1.2",
+    "react-popout": "^1.0.2",
+    "react-scripts": "3.4.3",
+    "react-slick": "^0.27.11",
+    "react-window-resize": "^1.1.0",
+    "react-wordcloud": "^1.2.7",
+    "slick-carousel": "^1.8.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
