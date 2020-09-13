@@ -79,24 +79,26 @@ export default class LightboxExample extends Component {
             <img src={images[2]} style={{ width: "200px", height: "200px" }} />
           </div> */}
 
-          {this.props.wolframArray.reverse().map((url, index) => {
-            var x = this.props.wolframArray[index];
-            return (
-              <div
-                className="image"
-                id="image-1"
-                onClick={() =>
-                  this.setState({ photoIndex: index, isOpen: true })
-                }
-              >
-                <img
-                  src={this.props.wolframArray[index]}
-                  style={{ width: "200px", height: "200px" }}
-                  onError={(e) => (e.target.value = wolframImg)}
-                />
-              </div>
-            );
-          })}
+          {this.props.wolframArray
+            ? this.props.wolframArray.reverse().map((url, index) => {
+                var x = this.props.wolframArray[index];
+                return (
+                  <div
+                    className="image"
+                    id="image-1"
+                    onClick={() =>
+                      this.setState({ photoIndex: index, isOpen: true })
+                    }
+                  >
+                    <img
+                      src={this.props.wolframArray[index]}
+                      style={{ width: "200px", height: "200px" }}
+                      onError={(e) => (e.target.value = wolframImg)}
+                    />
+                  </div>
+                );
+              })
+            : null}
         </Slider>
         {isOpen && (
           <Lightbox
