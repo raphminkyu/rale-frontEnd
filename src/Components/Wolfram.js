@@ -50,13 +50,14 @@ export default class LightboxExample extends Component {
       className: "slider",
     };
     return (
-      <div>
+      <div className="card wolfram-card">
         {/*  <button type="button" onClick={() => this.setState({ isOpen: true })}>
           Open Lightbox
         </button> */}
-        <Slider {...settings}>
+        <Slider {...settings} className="card-body">
           <div
             className="image"
+            id="image-1"
             onClick={() => this.setState({ photoIndex: 0, isOpen: true })}
           >
             <img src={url} style={{ width: "200px", height: "200px" }} />

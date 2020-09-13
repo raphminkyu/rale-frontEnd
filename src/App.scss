@@ -3,6 +3,16 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 300;
 }
+.App {
+  overflow: hidden;
+  background: linear-gradient(
+      90deg,
+      rgba(45, 141, 255, 0.4) 0%,
+      rgba(45, 178, 255, 0.7) 100%
+    ),
+    url("./images/allie-KzUsqBRU0T4-unsplash.jpg");
+  background-size: cover;
+}
 h3 {
   font-weight: 400;
 }

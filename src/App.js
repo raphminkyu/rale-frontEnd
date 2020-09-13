@@ -10,6 +10,7 @@ import WordChart from "./Components/WordChart";
 import Wolfram from "./Components/Wolfram";
 import LandingPage from "./Pages/LandingPage";
 import Loading from "./Components/Loading";
+import Tour from "./Components/Tour";
 const App = () => {
   const [landing, setLanding] = useState(true);
   const [loading, setLoading] = useState(true);
@@ -49,6 +50,7 @@ const App = () => {
           <Questions questions={questions} />
           <Wolfram />
         </div>
+        <Tour />
       </div>
       {/* </NewWindow> */}
     </>
