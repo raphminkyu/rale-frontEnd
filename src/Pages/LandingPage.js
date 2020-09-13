@@ -36,9 +36,10 @@ const LandingPage = ({ handleStart }) => {
       <header className="masthead">
         <div className="container d-flex h-100 align-items-center">
           <div className="heading-description mx-auto text-center">
-            <h1 className="mx-auto my-0 text-uppercase">Super doooper app</h1>
+            <h1 className="mx-auto my-0 text-uppercase">Rale</h1>
             <h2 className="text-white-50 mx-auto mt-2 mb-5">
-              Suuuuuper dooooooper apppppp
+              A real time curated classroom environment, designed to enhance the
+              learning experience.
             </h2>
             <button
               onClick={handleStart}
