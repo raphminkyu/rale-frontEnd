@@ -25,9 +25,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const API = "KH3LRW-HUELER2TUL";
 const queryType = "simple";
-const url = `http://api.wolframalpha.com/v2/${queryType}?appid=${API}&input=5*5&output=json`;
-const images = [url, url, url, "//placekitten.com/1500/1500"];
-
+var images;
 export default class LightboxExample extends Component {
   constructor(props) {
     super(props);
@@ -37,8 +35,18 @@ export default class LightboxExample extends Component {
       isOpen: false,
     };
   }
+  componentDidUpdate(){
+    console.log("huh")
+    const url = this.props.url;
+    images.pop();
+    images.shift();
+  }
 
-  render() {
+   render() {
+    const url = this.props.url;
+    images = ["//placekitten.com/1500/1500", "//placekitten.com/1500/1500", "//placekitten.com/1500/1500", "//placekitten.com/1500/1500"];
+
+    
     const { photoIndex, isOpen } = this.state;
     var settings = {
       dots: true,
@@ -49,6 +57,7 @@ export default class LightboxExample extends Component {
       adaptiveHeight: true,
       className: "slider",
     };
+
     return (
       <div className="card wolfram-card">
         <Slider {...settings} className="card-body">
@@ -57,13 +66,13 @@ export default class LightboxExample extends Component {
             id="image-1"
             onClick={() => this.setState({ photoIndex: 0, isOpen: true })}
           >
-            <img src={url} style={{ width: "200px", height: "200px" }} />
+            <img src={images[0]} style={{ width: "200px", height: "200px" }} />
           </div>
           <div className="image">
-            <img src={url} style={{ width: "200px", height: "200px" }} />
+            <img src={images[1]} style={{ width: "200px", height: "200px" }} />
           </div>
           <div className="image">
-            <img src={url} style={{ width: "200px", height: "200px" }} />
+            <img src={images[2]} style={{ width: "200px", height: "200px" }} />
           </div>
         </Slider>
         {isOpen && (

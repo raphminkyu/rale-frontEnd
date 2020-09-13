@@ -13,18 +13,24 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const API = "KH3LRW-HUELER2TUL";
   const queryType = "simple";
-  const url = `http://api.wolframalpha.com/v2/${queryType}?appid=${API}&input=population%20france&output=json`;
+  // const url = `http://api.wolframalpha.com/v2/${queryType}?appid=${API}&input=population%20france&output=json`;
   useFirebaseConnect([
     {
       path: "results/current_session",
-    },
+    }
   ]);
   var questions;
   var topics;
+  var url;
   const results = useSelector((state) => state.firebase.ordered.results);
+  const link = useSelector((state)=>state.firebase.ordered.results);
+  console.log()
   if (results && results.current_session && isLoaded(results)) {
     questions = results.current_session[0].value.questions;
     topics = results.current_session[0].value.topics;
+  }
+  if (link && link.current_session && isLoaded(results)) {
+    url = results.current_session[0].value.wolfram;
   }
   const handleStart = () => {
     setLanding(false);
@@ -40,7 +46,7 @@ const App = () => {
         <div className="container">
           <WordChart topics={topics} />
           <Questions questions={questions} />
-          <Wolfram />
+          <Wolfram url = {url[url.length-1]}/>
         </div>
         <Tour />
       </div>

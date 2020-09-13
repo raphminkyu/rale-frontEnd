@@ -23,7 +23,6 @@ const fbConfig = {
   messagingSenderId: process.env.REACT_APP_MESSENGERID,
   appId: process.env.REACT_APP_APPID,
 };
-
 const rrfConfig = {
   userProfile: "users",
   // useFirestoreForProfile: true // Firestore for Profile instead of Realtime DB
