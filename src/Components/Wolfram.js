@@ -26,28 +26,33 @@ import "slick-carousel/slick/slick-theme.css";
 const API = "KH3LRW-HUELER2TUL";
 const queryType = "simple";
 var images;
+const wolframImg = "https://www.wolframalpha.com/_next/static/images/share_3G6HuGr6.png"
 export default class LightboxExample extends Component {
+  
   constructor(props) {
     super(props);
 
     this.state = {
       photoIndex: 0,
       isOpen: false,
+      images : [wolframImg,wolframImg,wolframImg,wolframImg]
     };
-  }
-  componentDidUpdate(){
-    console.log("huh")
-    const url = this.props.url;
-    images.pop();
-    images.shift();
-  }
-
-   render() {
-    const url = this.props.url;
-    images = ["//placekitten.com/1500/1500", "//placekitten.com/1500/1500", "//placekitten.com/1500/1500", "//placekitten.com/1500/1500"];
-
     
-    const { photoIndex, isOpen } = this.state;
+  }
+  componentDidUpdate(prevProps, prevState){
+    const url = this.props.url;
+    if(url!==this.state.images[0]){
+      console.log("huh")
+    
+      this.state.images.pop();
+      this.state.images.unshift(url);
+      console.log(this.state)
+    }
+    
+  }
+
+   render() {    
+    const { photoIndex, isOpen, images } = this.state;
     var settings = {
       dots: true,
       infinite: true,
@@ -66,7 +71,7 @@ export default class LightboxExample extends Component {
             id="image-1"
             onClick={() => this.setState({ photoIndex: 0, isOpen: true })}
           >
-            <img src={images[0]} style={{ width: "200px", height: "200px" }} />
+            <img src={images[0]} style={{ width: "200px", height: "200px" }}/>
           </div>
           <div className="image">
             <img src={images[1]} style={{ width: "200px", height: "200px" }} />

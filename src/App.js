@@ -20,16 +20,15 @@ const App = () => {
     }
   ]);
   var questions;
-  var topics;
-  var url;
+  var topics = [];
+  var url = []
   const results = useSelector((state) => state.firebase.ordered.results);
-  const link = useSelector((state)=>state.firebase.ordered.results);
-  console.log()
   if (results && results.current_session && isLoaded(results)) {
     questions = results.current_session[0].value.questions;
     topics = results.current_session[0].value.topics;
   }
-  if (link && link.current_session && isLoaded(results)) {
+  if (results && results.current_session.wolfram && isLoaded(results.current_session.wolfram )) {
+    console.log("here")
     url = results.current_session[0].value.wolfram;
   }
   const handleStart = () => {
@@ -46,7 +45,9 @@ const App = () => {
         <div className="container">
           <WordChart topics={topics} />
           <Questions questions={questions} />
-          <Wolfram url = {url[url.length-1]}/>
+          <Wolfram 
+          url = {url[url.length-1]}
+          />
         </div>
         <Tour />
       </div>

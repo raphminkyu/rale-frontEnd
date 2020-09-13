@@ -25,8 +25,8 @@ h3 {
   /* height: 30vh; */
   margin: 15px;
   position: relative;
-  left: -27px;
-  width: 400px;
+  right: 13px;
+  width: 374px;
   height: 200px;
 }
 .wordChart {
@@ -49,6 +49,10 @@ h3 {
 }
 .questions-card {
   margin-bottom: 25px;
+}
+.scroll-down{
+  display:flex;
+  flex-direction: column-reverse;
 }
 /* .questions::-webkit-scrollbar {
   display: none;

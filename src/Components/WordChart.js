@@ -18,7 +18,9 @@ const WordChart = ({ topics }) => {
   };
 
   var topicMap = {};
-
+  if(!topics){
+    topics=[]
+  }
   topics.forEach((topic) => {
     if (topicMap[topic]) {
       topicMap[topic] += 1;

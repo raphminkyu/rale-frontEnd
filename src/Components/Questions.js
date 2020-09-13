@@ -7,7 +7,7 @@ const Questions = ({ questions }) => {
   return (
     <>
       <div className="card questions-card">
-        <ul className="card-body questions list-group">
+        <ul className="card-body questions list-group scroll-down">
           {questions
             ? questions.map((question, index) => {
                 if (index === 0) {
