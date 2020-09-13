@@ -100,18 +100,29 @@ export default class LightboxExample extends Component {
         </Slider>
         {isOpen && (
           <Lightbox
-            mainSrc={images[photoIndex]}
-            nextSrc={images[(photoIndex + 1) % images.length]}
-            prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+            mainSrc={this.props.wolframArray.reverse()[photoIndex]}
+            nextSrc={
+              this.props.wolframArray.reverse()[
+                (photoIndex + 1) % this.props.wolframArray.length
+              ]
+            }
+            prevSrc={
+              this.props.wolframArray.reverse()[
+                (photoIndex + this.props.wolframArray.length - 1) %
+                  this.props.wolframArray.length
+              ]
+            }
             onCloseRequest={() => this.setState({ isOpen: false })}
             onMovePrevRequest={() =>
               this.setState({
-                photoIndex: (photoIndex + images.length - 1) % images.length,
+                photoIndex:
+                  (photoIndex + this.props.wolframArray.length - 1) %
+                  this.props.wolframArray.length,
               })
             }
             onMoveNextRequest={() =>
               this.setState({
-                photoIndex: (photoIndex + 1) % images.length,
+                photoIndex: (photoIndex + 1) % this.props.wolframArray.length,
               })
             }
           />
