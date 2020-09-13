@@ -15,13 +15,13 @@ import "firebase/database";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 const fbConfig = {
-  apiKey: "AIzaSyDbiWGkCd_uWgo7qanmaL4et_CYYyNX6yg",
-  authDomain: "studious-stack-289304.firebaseapp.com",
-  databaseURL: "https://studious-stack-289304.firebaseio.com",
-  projectId: "studious-stack-289304",
-  storageBucket: "studious-stack-289304.appspot.com",
-  messagingSenderId: "916232046246",
-  appId: "1:916232046246:web:dd1d0043b0b6cad024d667",
+  apiKey: process.env.REACT_APP_APIKEY,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASEURL,
+  projectId: process.env.REACT_APP_PROJECTID,
+  storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSENGERID,
+  appId: process.env.REACT_APP_APPID,
 };
 
 const rrfConfig = {
