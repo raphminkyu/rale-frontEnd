@@ -17,19 +17,19 @@ const App = () => {
   useFirebaseConnect([
     {
       path: "results/current_session",
-    }
+    },
   ]);
   var questions;
   var topics = [];
-  var url = []
+  var wolframArray = [];
   const results = useSelector((state) => state.firebase.ordered.results);
   if (results && results.current_session && isLoaded(results)) {
     questions = results.current_session[0].value.questions;
     topics = results.current_session[0].value.topics;
   }
-  if (results && results.current_session.wolfram && isLoaded(results.current_session.wolfram )) {
-    console.log("here")
-    url = results.current_session[0].value.wolfram;
+  if (results && results.current_session && isLoaded(results)) {
+    console.log("here");
+    wolframArray = results.current_session[0].value.wolfram;
   }
   const handleStart = () => {
     setLanding(false);
@@ -37,6 +37,8 @@ const App = () => {
       setLoading(false);
     }, 1000);
   };
+
+  console.log(wolframArray);
   const returnValue = landing ? (
     <LandingPage handleStart={handleStart} />
   ) : results && isLoaded(results) && !loading ? (
@@ -45,9 +47,7 @@ const App = () => {
         <div className="container">
           <WordChart topics={topics} />
           <Questions questions={questions} />
-          <Wolfram 
-          url = {url[url.length-1]}
-          />
+          <Wolfram wolframArray={wolframArray} />
         </div>
         <Tour />
       </div>
