@@ -13,11 +13,11 @@ const Questions = ({ questions }) => {
                 if (index === 0) {
                   return (
                     <li className="active list-group-item ">
-                      {question.value.question}
+                      {question.question}
                     </li>
                   );
                 } else {
-                  return <li>{question.value.question}</li>;
+                  return <li>{question.question}</li>;
                 }
               })
             : null}

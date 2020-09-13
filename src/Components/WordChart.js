@@ -1,14 +1,12 @@
 import React from "react";
 import ReactWordcloud from "react-wordcloud";
-import { useSelector } from "react-redux";
-import { isLoaded, useFirebaseConnect } from "react-redux-firebase";
 const WordChart = ({ topics }) => {
   const options = {
     colors: ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b"],
     enableTooltip: false,
     deterministic: false,
     fontFamily: "Lato",
-    fontSizes: [20, 30, 40, 60],
+    fontSizes: [10, 50, 80, 120],
     fontStyle: "normal",
     fontWeight: "normal",
     padding: 2,
@@ -18,62 +16,27 @@ const WordChart = ({ topics }) => {
     spiral: "archimedean",
     transitionDuration: 1000,
   };
-  /* var words = [
-    {
-      text: "mistake",
-      value: 0.034,
-    },
-    {
-      text: "thought",
-      value: 0.022,
-    },
-    {
-      text: "Math",
-      value: 0.016,
-    },
-    {
-      text: "Linear algebra",
-      value: 0.014,
-    },
-    {
-      text: "Quadratic interpolation",
-      value: 0.011,
-    },
-    {
-      text: "mistake",
-      value: 0.034,
-    },
-    {
-      text: "thought",
-      value: 0.022,
-    },
-    {
-      text: "Math",
-      value: 0.016,
-    },
-    {
-      text: "mistake",
-      value: 0.034,
-    },
-    {
-      text: "thought",
-      value: 0.022,
-    },
-    {
-      text: "Math",
-      value: 0.016,
-    },
-  ]; */
-  var words;
-  if (topics) {
-    words = topics.map((topic, index) => {
-      return { text: topic.value.topic, value: index + 1 };
-    });
+
+  var topicMap = {};
+
+  topics.forEach((topic) => {
+    if (topicMap[topic]) {
+      topicMap[topic] += 1;
+    } else {
+      topicMap[topic] = 1;
+    }
+  });
+  var cloudArray = [];
+  for (let [key, value] of Object.entries(topicMap)) {
+    cloudArray.push({ text: key, value });
   }
   return (
     <div className="topics card">
       <div className="wordChart card-body">
-        <ReactWordcloud options={options} words={words ? words : []} />
+        <ReactWordcloud
+          options={options}
+          words={cloudArray ? cloudArray : []}
+        />
       </div>
     </div>
   );

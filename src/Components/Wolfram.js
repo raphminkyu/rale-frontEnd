@@ -51,9 +51,6 @@ export default class LightboxExample extends Component {
     };
     return (
       <div className="card wolfram-card">
-        {/*  <button type="button" onClick={() => this.setState({ isOpen: true })}>
-          Open Lightbox
-        </button> */}
         <Slider {...settings} className="card-body">
           <div
             className="image"
@@ -68,12 +65,6 @@ export default class LightboxExample extends Component {
           <div className="image">
             <img src={url} style={{ width: "200px", height: "200px" }} />
           </div>
-          {/*<div>
-            <img src={url} style={{ width: "200px", height: "200px" }} />
-          </div>
-          <div>
-            <img src={url} style={{ width: "200px", height: "200px" }} />
-            </div> */}
         </Slider>
         {isOpen && (
           <Lightbox
