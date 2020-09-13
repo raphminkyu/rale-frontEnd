@@ -14,7 +14,8 @@ h3 {
 .topics {
   /* height: 30vh; */
   margin: 15px;
-
+  position: relative;
+  left: -27px;
   width: 400px;
   height: 200px;
 }
@@ -31,11 +32,13 @@ h3 {
   display: block;
   position: relative;
   height: 120px;
-  border: 1px solid black;
   padding: 5px 20px;
-  border-radius: 10px;
   overflow-y: auto;
   text-align: center;
+  list-style: none;
+}
+.questions-card {
+  margin-bottom: 25px;
 }
 /* .questions::-webkit-scrollbar {
   display: none;
@@ -72,7 +75,7 @@ h3 {
 }
 
 .questions::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
+  background-color: #2d92ff;
   border-radius: 10px;
   outline: none;
 }

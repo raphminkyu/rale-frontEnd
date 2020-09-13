@@ -24,7 +24,7 @@
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #64a19d;
+  --primary: #2d92ff;
   --secondary: #6c757d;
   --success: #28a745;
   --info: #17a2b8;
@@ -5535,8 +5535,8 @@ a.badge-black.focus {
 .list-group-item.active {
   z-index: 2;
   color: #fff;
-  background-color: #64a19d;
-  border-color: #64a19d;
+  background-color: #2d92ff;
+  border-color: #2d92ff;
 }
 .list-group-item + .list-group-item {
   border-top-width: 0;
@@ -10257,7 +10257,6 @@ button.bg-black:focus {
 
 .text-center {
   text-align: center !important;
-  
 }
 
 @media (min-width: 576px) {
@@ -10668,12 +10667,12 @@ body {
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background: linear-gradient(
+  /* background: linear-gradient(
       to bottom,
       rgb(45, 178, 255, 0.65) 0%,
       rgb(45, 140, 255, 0.9) 75%
     ),
-    url("./allie-KzUsqBRU0T4-unsplash.jpg");
+    url("./allie-KzUsqBRU0T4-unsplash.jpg") */;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;

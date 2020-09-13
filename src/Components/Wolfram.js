@@ -51,7 +51,6 @@ export default class LightboxExample extends Component {
     };
     return (
       <div>
-        <h3>Wolfram:</h3>
         {/*  <button type="button" onClick={() => this.setState({ isOpen: true })}>
           Open Lightbox
         </button> */}

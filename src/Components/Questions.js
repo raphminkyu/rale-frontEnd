@@ -1,19 +1,27 @@
 import { getDefaultNormalizer } from "@testing-library/react";
 import React from "react";
+import { useSelector } from "react-redux";
+import { isLoaded, useFirebaseConnect } from "react-redux-firebase";
 
-const Questions = () => {
+const Questions = ({ questions }) => {
   return (
     <>
-      <h3>Questions:</h3>
-      <div className="questions">
-        <p className="first-p">Do you guys understand what I am saying?</p>
-        <p>Do you guys understand what I am saying?</p>
-        <p>Do you guys understand what I am saying?</p>
-        <p>Do you guys understand what I am saying?</p>
-
-        <p>Do you guys understand what I am saying?</p>
-        <p>Do you guys understand what I am saying?</p>
-        <p>Do you guys understand what I am saying?</p>
+      <div className="card questions-card">
+        <ul className="card-body questions list-group">
+          {questions
+            ? questions.map((question, index) => {
+                if (index === 0) {
+                  return (
+                    <li className="active list-group-item ">
+                      {question.value.question}
+                    </li>
+                  );
+                } else {
+                  return <li>{question.value.question}</li>;
+                }
+              })
+            : null}
+        </ul>
       </div>
     </>
   );
